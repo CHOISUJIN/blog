@@ -1,0 +1,121 @@
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: "Pretendard";
+  }
+}
+
+@layer base {
+  :root {
+    --background: 0 0% 98%;
+    --foreground: 35 8% 31%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 35 8% 31%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 35 8% 31%;
+
+    --primary: 25 95% 53%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 220 14% 96%;
+    --secondary-foreground: 35 8% 31%;
+
+    --informative: 199 86% 48%;
+    --informative-foreground: 0 0% 100%;
+
+    --warning: 42 96% 59%;
+    --warning-foreground: 35 8% 31%;
+
+    --muted: 0 0% 96%;
+    --muted-foreground: 35 8% 47%;
+
+    --accent: 25 95% 53%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 0 0% 89%;
+    --input: 0 0% 89%;
+    --ring: 25 95% 53%;
+
+    --chart-1: 25 95% 53%;
+    --chart-2: 199 86% 48%;
+    --chart-3: 156 93% 42%;
+    --chart-4: 338 95% 56%;
+    --chart-5: 272 95% 53%;
+
+    --radius: 0.5rem;
+  }
+  .dark {
+    --background: 218 24% 9%;
+    --foreground: 0 0% 90%;
+
+    --card: 210 18% 14%;
+    --card-foreground: 0 0% 90%;
+
+    --popover: 210 18% 14%;
+    --popover-foreground: 0 0% 90%;
+
+    --primary: 25 100% 45%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 210 18% 18%;
+    --secondary-foreground: 0 0% 90%;
+
+    --informative: 199 86% 48%;
+    --informative-foreground: 0 0% 100%;
+
+    --warning: 42 96% 59%;
+    --warning-foreground: 210 18% 14%;
+
+    --muted: 210 18% 18%;
+    --muted-foreground: 215 20% 65%;
+
+    --accent: 25 95% 53%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 210 18% 22%;
+    --input: 210 18% 22%;
+    --ring: 25 95% 53%;
+
+    --chart-1: 25 95% 53%;
+    --chart-2: 199 86% 48%;
+    --chart-3: 156 93% 42%;
+    --chart-4: 338 95% 56%;
+    --chart-5: 272 95% 53%;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+@keyframes home-cover {
+  0% {
+    object-position: center bottom;
+  }
+  100% {
+    object-position: center top;
+  }
+}
+
+.animate-home-cover {
+  animation: home-cover 15s ease-out alternate infinite;
+}
