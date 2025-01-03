@@ -8,6 +8,7 @@
   * {
     @apply border-border;
   }
+
   body {
     @apply bg-background text-foreground;
     font-family: "Pretendard";
@@ -16,88 +17,146 @@
 
 @layer base {
   :root {
-    --background: 0 0% 98%;
-    --foreground: 35 8% 31%;
+    --background: 60 100% 95%;
+    /* 부드러운 크림색 */
+    --foreground: 40 70% 20%;
+    /* 따뜻한 갈색 텍스트 */
 
-    --card: 0 0% 100%;
-    --card-foreground: 35 8% 31%;
+    --card: 60 100% 98%;
+    /* 밝은 병아리색 카드 */
+    --card-foreground: 40 70% 20%;
+    /* 따뜻한 갈색 텍스트 */
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 35 8% 31%;
+    --popover: 60 100% 98%;
+    /* 밝은 병아리색 팝업 */
+    --popover-foreground: 40 70% 20%;
+    /* 따뜻한 갈색 */
 
-    --primary: 25 95% 53%;
-    --primary-foreground: 0 0% 100%;
+    --primary: 50 100% 50%;
+    /* 찐 병아리 노랑 */
+    --primary-foreground: 0 0% 10%;
+    /* 짙은 텍스트 */
 
-    --secondary: 220 14% 96%;
-    --secondary-foreground: 35 8% 31%;
+    --secondary: 40 85% 85%;
+    /* 부드러운 살구색 */
+    --secondary-foreground: 40 70% 25%;
+    /* 짙은 살구색 텍스트 */
 
-    --informative: 199 86% 48%;
+    --informative: 210 70% 50%;
+    /* 차분한 파랑 */
     --informative-foreground: 0 0% 100%;
+    /* 흰색 */
 
-    --warning: 42 96% 59%;
-    --warning-foreground: 35 8% 31%;
+    --warning: 38 90% 60%;
+    /* 밝은 주황 노랑 */
+    --warning-foreground: 40 70% 20%;
+    /* 짙은 갈색 */
 
-    --muted: 0 0% 96%;
-    --muted-foreground: 35 8% 47%;
+    --muted: 60 100% 90%;
+    /* 부드러운 크림색 */
+    --muted-foreground: 40 70% 30%;
+    /* 중간 회색 */
 
-    --accent: 25 95% 53%;
-    --accent-foreground: 0 0% 100%;
+    --accent: 50 90% 55%;
+    /* 밝은 병아리 노랑 */
+    --accent-foreground: 0 0% 10%;
+    /* 짙은 텍스트 */
 
-    --destructive: 0 84% 60%;
-    --destructive-foreground: 0 0% 98%;
+    --destructive: 0 70% 55%;
+    /* 부드러운 붉은색 */
+    --destructive-foreground: 0 0% 95%;
+    /* 밝은 회색 */
 
-    --border: 0 0% 89%;
-    --input: 0 0% 89%;
-    --ring: 25 95% 53%;
+    --border: 60 100% 85%;
+    /* 연한 병아리 경계선 */
+    --input: 60 100% 85%;
+    /* 입력 필드 배경 */
+    --ring: 50 100% 55%;
+    /* 병아리 노랑 */
 
-    --chart-1: 25 95% 53%;
-    --chart-2: 199 86% 48%;
-    --chart-3: 156 93% 42%;
-    --chart-4: 338 95% 56%;
-    --chart-5: 272 95% 53%;
+    --chart-1: 50 100% 50%;
+    /* 찐 병아리 노랑 */
+    --chart-2: 210 70% 50%;
+    /* 차분한 파랑 */
+    --chart-3: 120 50% 45%;
+    /* 부드러운 초록 */
+    --chart-4: 340 70% 60%;
+    /* 따뜻한 분홍색 */
+    --chart-5: 270 50% 55%;
+    /* 부드러운 보라색 */
 
     --radius: 0.5rem;
+    /* 둥근 모서리 */
   }
+
   .dark {
-    --background: 218 24% 9%;
-    --foreground: 0 0% 90%;
+    --background: 40 50% 10%;
+    /* 짙은 갈색 배경 */
+    --foreground: 60 100% 85%;
+    /* 밝은 크림 텍스트 */
 
-    --card: 210 18% 14%;
-    --card-foreground: 0 0% 90%;
+    --card: 40 50% 15%;
+    /* 어두운 갈색 카드 */
+    --card-foreground: 60 100% 85%;
+    /* 밝은 크림 텍스트 */
 
-    --popover: 210 18% 14%;
-    --popover-foreground: 0 0% 90%;
+    --popover: 40 50% 12%;
+    /* 어두운 갈색 팝업 */
+    --popover-foreground: 60 100% 80%;
+    /* 밝은 크림 텍스트 */
 
-    --primary: 25 100% 45%;
+    --primary: 50 100% 50%;
+    /* 찐 병아리 노랑 */
     --primary-foreground: 0 0% 100%;
+    /* 흰색 */
 
-    --secondary: 210 18% 18%;
-    --secondary-foreground: 0 0% 90%;
+    --secondary: 40 60% 30%;
+    /* 어두운 살구색 */
+    --secondary-foreground: 60 100% 85%;
+    /* 밝은 크림 텍스트 */
 
-    --informative: 199 86% 48%;
+    --informative: 210 70% 50%;
+    /* 차분한 파랑 */
     --informative-foreground: 0 0% 100%;
+    /* 흰색 */
 
-    --warning: 42 96% 59%;
-    --warning-foreground: 210 18% 14%;
+    --warning: 38 90% 60%;
+    /* 밝은 주황 노랑 */
+    --warning-foreground: 40 50% 15%;
+    /* 어두운 갈색 */
 
-    --muted: 210 18% 18%;
-    --muted-foreground: 215 20% 65%;
+    --muted: 40 50% 20%;
+    /* 짙은 회색 */
+    --muted-foreground: 60 100% 70%;
+    /* 밝은 크림 텍스트 */
 
-    --accent: 25 95% 53%;
-    --accent-foreground: 0 0% 100%;
+    --accent: 50 90% 55%;
+    /* 병아리 노랑 */
+    --accent-foreground: 60 100% 90%;
+    /* 밝은 크림 */
 
-    --destructive: 0 84% 60%;
-    --destructive-foreground: 0 0% 98%;
+    --destructive: 0 70% 55%;
+    /* 어두운 붉은색 */
+    --destructive-foreground: 0 0% 95%;
+    /* 밝은 회색 */
 
-    --border: 210 18% 22%;
-    --input: 210 18% 22%;
-    --ring: 25 95% 53%;
+    --border: 40 50% 25%;
+    /* 어두운 갈색 경계선 */
+    --input: 40 50% 25%;
+    /* 어두운 입력 필드 */
+    --ring: 50 100% 50%;
+    /* 병아리 노랑 */
 
-    --chart-1: 25 95% 53%;
-    --chart-2: 199 86% 48%;
-    --chart-3: 156 93% 42%;
-    --chart-4: 338 95% 56%;
-    --chart-5: 272 95% 53%;
+    --chart-1: 50 100% 50%;
+    /* 찐 병아리 노랑 */
+    --chart-2: 210 70% 50%;
+    /* 차분한 파랑 */
+    --chart-3: 120 50% 45%;
+    /* 부드러운 초록 */
+    --chart-4: 340 70% 60%;
+    /* 따뜻한 분홍색 */
+    --chart-5: 270 50% 55%;
+    /* 부드러운 보라색 */
   }
 }
 
@@ -111,6 +170,7 @@
   0% {
     object-position: center bottom;
   }
+
   100% {
     object-position: center top;
   }
