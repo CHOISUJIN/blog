@@ -8,7 +8,7 @@ const Footer = () => {
     <footer className="flex flex-col items-center justify-center py-7 gap-3">
       <div className="flex flex-row gap-4">
         <Link
-          href="https://github.com/2circumflex"
+          href="https://github.com/CHOISUJIN"
           target="_blank"
           rel="noopener noreferrer"
           className="text-gray-600 hover:text-gray-900 transition-colors"
@@ -17,7 +17,7 @@ const Footer = () => {
           <FaGithub size={20} />
         </Link>
         <Link
-          href="https://www.linkedin.com/in/2circumflex/"
+          href="https://www.linkedin.com/in/sooooooo/"
           target="_blank"
           rel="noopener noreferrer"
           className="text-gray-600 hover:text-gray-900 transition-colors"
@@ -28,9 +28,9 @@ const Footer = () => {
       </div>
       <div
         className="flex justify-center text-center text-sm text-gray-500"
-        aria-label={`저작권 ${currentYear} leerowoon.dev`}
+        aria-label={`저작권 ${currentYear} sujin.choi`}
       >
-        Copyright © {currentYear} leerowoon.dev
+        Copyright © {currentYear} sujin.choi
       </div>
     </footer>
   );
