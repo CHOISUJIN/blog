@@ -33,21 +33,29 @@ const parsePostMatterWithContent = async (
   return { ...(data as PostMatter), content };
 };
 
-export const getPostPaths = (): string[] => {
-  const postPaths: string[] = sync(`${POSTS_PATH}/*.mdx`);
+// export const getPostPaths = (): string[] => {
+//   const postPaths: string[] = sync(`${POSTS_PATH}/*.mdx`);
+//   return postPaths;
+// };
+
+export const getPostPaths = (category?: string): string[] => {
+  const folder = category || "**";
+  const postPaths: string[] = sync(`${POSTS_PATH}/${folder}/**/*.mdx`);
   return postPaths;
 };
 
-export const getPostList = async (): Promise<Post[]> => {
-  const postPaths = getPostPaths();
+export const getPostList = async (category?: string): Promise<Post[]> => {
+  const postPaths = getPostPaths(category);
   const postList = await Promise.all(
     postPaths.map((postPath) => parsePost(postPath))
   );
   return postList;
 };
 
-export const getDescSortedPostList = async (): Promise<Post[]> => {
-  const postList = await getPostList();
+export const getDescSortedPostList = async (
+  category?: string
+): Promise<Post[]> => {
+  const postList = await getPostList(category);
   return postList.sort((a, b) => (a.date > b.date ? -1 : 1));
 };
 

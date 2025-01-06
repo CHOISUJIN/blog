@@ -1,32 +1,33 @@
 import { Metadata } from "next";
 
+import PostList from "@/components/posts/post-list";
 import { baseUrl, siteMetadata, siteName } from "@/lib/metadata";
-import RecentPost from "@/components/home/recent-post";
 
 export async function generateMetadata(): Promise<Metadata> {
-  const url = `${baseUrl}`;
+  const pageTitle = "Posts";
+  const url = `${baseUrl}/posts`;
 
   return {
-    title: `${siteName}`,
+    title: `${pageTitle} | ${siteName}`,
     alternates: {
       canonical: url,
     },
     openGraph: {
       ...siteMetadata.openGraph,
-      title: `${siteName}`,
+      title: pageTitle,
       url,
     },
     twitter: {
       ...siteMetadata.twitter,
-      title: `${siteName}`,
+      title: pageTitle,
     },
   };
 }
 
-export default async function Home() {
+export default async function PostsPage() {
   return (
     <div className="container mx-auto max-w-[900px] mt-32 mb-16 flex flex-col p-2 px-6">
-      <RecentPost />
+      <PostList />
     </div>
   );
 }
