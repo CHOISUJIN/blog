@@ -11,6 +11,8 @@ export interface PostMatterWithContent extends PostMatter {
 }
 
 export interface Post extends PostMatterWithContent {
+  categoryDirName: string;
+  categoryName: string;
   slug: string;
 }
 
@@ -18,4 +20,10 @@ export interface HeadingItem {
   text: string;
   link: string;
   indent: number;
+}
+
+export interface CategoryDetail {
+  dirName: string;
+  name: string;
+  count: number;
 }

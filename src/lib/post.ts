@@ -3,23 +3,32 @@ import matter from "gray-matter";
 import path from "path";
 import { sync } from "glob";
 
-import { HeadingItem, Post, PostMatter, PostMatterWithContent } from "./types";
+import {
+  HeadingItem,
+  Post,
+  PostMatter,
+  PostMatterWithContent,
+  CategoryDetail,
+} from "./types";
 
-const BASE_PATH = "/src/posts";
+const BASE_PATH = "src/posts";
 const POSTS_PATH = path.join(process.cwd(), BASE_PATH);
 
-export const parsePostFileName = (postPath: string): string => {
-  const fileName = postPath
-    .slice(postPath.indexOf(BASE_PATH))
+const parsePost = async (postPath: string): Promise<Post> => {
+  const postMatterWithContent = await parsePostMatterWithContent(postPath);
+
+  const normalizedPath = postPath.split(path.sep).join("/");
+  const filePath = normalizedPath
+    .slice(normalizedPath.indexOf(BASE_PATH))
     .replace(`${BASE_PATH}/`, "")
     .replace(".mdx", "");
-  return fileName;
-};
 
-const parsePost = async (postPath: string): Promise<Post> => {
-  const slug = parsePostFileName(postPath);
-  const postMatterWithContent = await parsePostMatterWithContent(postPath);
+  const [categoryDirName, slug] = filePath.split("/");
+  const categoryName = getCategoryName(categoryDirName);
+
   return {
+    categoryDirName,
+    categoryName,
     slug,
     ...postMatterWithContent,
   };
@@ -32,11 +41,6 @@ const parsePostMatterWithContent = async (
   const { data, content } = matter(file);
   return { ...(data as PostMatter), content };
 };
-
-// export const getPostPaths = (): string[] => {
-//   const postPaths: string[] = sync(`${POSTS_PATH}/*.mdx`);
-//   return postPaths;
-// };
 
 export const getPostPaths = (category?: string): string[] => {
   const folder = category || "**";
@@ -89,4 +93,34 @@ export const parseToc = (content: string): HeadingItem[] => {
       indent: (heading.match(/#/g)?.length || 2) - 2,
     })) || []
   );
+};
+
+export const getAllPostCount = async () => (await getPostList()).length;
+
+export const getCategoryDetailList = async () => {
+  const postList = await getPostList();
+  const result: { [key: string]: number } = {};
+  for (const post of postList) {
+    const category = post.categoryDirName;
+    result[category] = (result[category] || 0) + 1;
+  }
+
+  const detailList: CategoryDetail[] = Object.entries(result).map(
+    ([category, count]) => ({
+      dirName: category,
+      name: getCategoryName(category),
+      count,
+    })
+  );
+  return detailList;
+};
+
+export const getCategoryName = (categoryDirName: string): string => {
+  const categoryDirNameMap: Record<string, string> = {
+    dev: "💻 개발",
+    travel: "🏖️ 여행",
+    invest: "💰 투자",
+  };
+
+  return categoryDirNameMap[categoryDirName] || categoryDirName;
 };
