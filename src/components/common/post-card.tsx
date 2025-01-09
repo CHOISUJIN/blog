@@ -6,7 +6,7 @@ import { FixedSizeImgWithPlaceholder } from "@/components/fixed-size-img-with-pl
 
 export default function PostCard({ post }: { post: Post }) {
   return (
-    <Link key={post.slug} href={`/posts/${post.slug}`}>
+    <Link key={post.slug} href={`/${post.slug}`}>
       <article className="w-full flex flex-col sm:flex-row gap-6 md:gap-10 transition-all group border rounded-lg bg-muted/80 dark:bg-muted/60 p-6 hover:scale-105 hover:bg-muted dark:hover:bg-muted">
         {/* 텍스트 섹션 */}
         <div className="flex flex-col flex-1 order-2 sm:order-1">
