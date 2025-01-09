@@ -6,6 +6,7 @@ import Link from "next/link";
 import SkillText from "@/components/about/skill-text";
 import IconWrapper from "@/components/about/icon-wrapper";
 import { baseUrl, siteName, siteMetadata } from "@/lib/metadata";
+import { FixedSizeImgWithPlaceholder } from "@/components/fixed-size-img-with-placeholder";
 
 export async function generateMetadata(): Promise<Metadata> {
   const pageTitle = "About";
@@ -53,9 +54,13 @@ export default function AboutPage() {
   return (
     <div className="container mx-auto max-w-[750px] mt-36 mb-16 flex flex-col gap-14 p-2 px-6">
       <section className="flex flex-col justify-center items-center gap-4">
-        <div className="w-36 h-36 rounded-full bg-primary/20 dark:bg-primary/30 flex items-center justify-center">
-          {/* <span className="text-gray-700"> 🐨 </span> */}
-        </div>
+        <FixedSizeImgWithPlaceholder
+          className="rounded-full size-40"
+          src="/images/profile.jpg"
+          alt="profile"
+          width={112}
+          height={112}
+        />
 
         <h1 className="text-3xl font-bold">최수진</h1>
         <p className="text-sm text-center">Software Engineer | Web Developer</p>

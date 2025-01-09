@@ -6,13 +6,13 @@ import { useTheme } from "next-themes";
 import { FiMoon, FiSun } from "react-icons/fi";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
 
 const Header = () => {
   const pathname = usePathname();
   const { theme, setTheme } = useTheme();
 
   const navigation = [
-    { name: "포스트", href: "/posts" },
     { name: "소개", href: "/about" },
   ];
 
@@ -41,7 +41,7 @@ const Header = () => {
                       "px-3 py-2 text-sm transition-colors",
                       pathname === item.href
                         ? "font-semibold"
-                        : "hover:text-primary dark:hover:text-primary-foreground"
+                        : ""
                     )}
                     aria-label={`${item.name} 페이지로 이동`}
                   >
@@ -49,10 +49,30 @@ const Header = () => {
                   </Link>
                 </li>
               ))}
-              <li className="border-l">
+              <li className="border-l ml-2 p-2 pl-4 rounded-md">
+                <Link
+                  href="https://github.com/CHOISUJIN"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="GitHub 프로필"
+                >
+                  <FaGithub size={20} />
+                </Link>
+              </li>
+              <li className="rounded-md p-2">
+                <Link
+                  href="https://www.linkedin.com/in/sooooooo/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="LinkedIn 프로필"
+                >
+                  <FaLinkedin size={20} />
+                </Link>
+              </li>
+              <li>
                 <button
                   onClick={handleThemeToggle}
-                  className="ml-2 rounded-md p-2 transition-colors text-muted-foreground hover:bg-muted/80 dark:hover:bg-muted/60 dark:text-muted-foreground"
+                  className="rounded-md p-2 transition-colors"
                   aria-label={
                     theme === "dark" ? "라이트 모드로 전환" : "다크 모드로 전환"
                   }
