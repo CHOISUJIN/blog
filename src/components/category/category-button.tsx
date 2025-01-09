@@ -16,10 +16,10 @@ export default function CategoryButton({
   return (
     <li>
       <button
-        className={`rounded-full text-sm px-4 py-2 bg-primary hover:bg-accent shadow-lg transition-all duration-200 dark:bg-secondary dark:hover:bg-accent ${
+        className={`rounded-full text-sm px-4 py-2 hover:bg-accent dark:hover:bg-accent shadow-lg transition-all duration-200  ${
           isCurrent
             ? "bg-accent ring-accent font-semibold dark:bg-accent dark:ring-accent dark:font-semibold"
-            : ""
+            : "bg-primary dark:bg-secondary"
         }`}
       >
         <Link href={href}>

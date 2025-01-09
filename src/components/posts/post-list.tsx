@@ -22,7 +22,7 @@ export default async function PostList({ category }: PostListProps) {
         categoryList={categoryList}
         currentCategory={category}
       />
-      <div className="flex flex-col gap-16">
+      <div className="flex flex-col gap-6">
         {postlist.map((post) => (
           <PostCard key={post.slug} post={post} />
         ))}

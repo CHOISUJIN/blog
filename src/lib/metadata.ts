@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 
-export const siteName = "최수진 블로그";
-export const title = `최수진 블로그`;
+export const siteName = "bbb";
+export const title = `bbb`;
 export const description = "개발 관련된 이야기를 합니다.";
 export const keywords = ["개발자", "개발자 블로그", "소프트웨어 엔지니어"];
 export const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;

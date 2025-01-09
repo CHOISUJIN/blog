@@ -11,8 +11,8 @@ const Header = () => {
   const { theme, setTheme } = useTheme();
 
   const navigation = [
-    { name: "Posts", href: "/posts" },
-    { name: "About", href: "/about" },
+    { name: "포스트", href: "/posts" },
+    { name: "소개", href: "/about" },
   ];
 
   const handleThemeToggle = () => {
@@ -49,7 +49,7 @@ const Header = () => {
                     href={item.href}
                     className={cn(
                       "px-3 py-2 text-sm transition-colors",
-                      pathname === item.href
+                      pathname.startsWith(item.href)
                         ? "text-primary-foreground bg-primary/20 dark:bg-primary/30"
                         : "hover:text-primary dark:hover:text-primary-foreground"
                     )}
@@ -59,7 +59,7 @@ const Header = () => {
                   </Link>
                 </li>
               ))}
-              <li>
+              <li className="border-l">
                 <button
                   onClick={handleThemeToggle}
                   className="ml-2 rounded-md p-2 transition-colors text-muted-foreground hover:bg-muted/80 dark:hover:bg-muted/60 dark:text-muted-foreground"

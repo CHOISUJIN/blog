@@ -25,7 +25,7 @@ async function RecentPostList() {
 
   return (
     <div className="flex flex-col gap-4">
-      <div className="flex flex-col gap-16">
+      <div className="flex flex-col gap-6">
         {recentPostList.map((post) => (
           <PostCard key={post.slug} post={post} />
         ))}

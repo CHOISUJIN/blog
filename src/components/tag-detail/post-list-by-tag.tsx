@@ -18,7 +18,7 @@ export default async function PostListByTag({ tag }: PostListByTagProps) {
     <div className="flex flex-col gap-4">
       <h1 className="text-2xl font-bold mb-8"># {tag}</h1>
       {filteredPostList.length > 0 && (
-        <div className="flex flex-col gap-16">
+        <div className="flex flex-col gap-6">
           {filteredPostList.map((post) => (
             <PostCard key={post.slug} post={post} />
           ))}
