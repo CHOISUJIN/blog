@@ -11,8 +11,6 @@ export interface PostMatterWithContent extends PostMatter {
 }
 
 export interface Post extends PostMatterWithContent {
-  categoryDirName: string;
-  categoryName: string;
   slug: string;
 }
 
