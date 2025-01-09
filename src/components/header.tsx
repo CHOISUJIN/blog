@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import { useTheme } from "next-themes";
 import { FiMoon, FiSun } from "react-icons/fi";
 import { cn } from "@/lib/utils";
+import Image from "next/image";
 
 const Header = () => {
   const pathname = usePathname();
@@ -28,18 +29,7 @@ const Header = () => {
             className="ml-2 flex items-center text-lg font-bold"
             aria-label="홈으로 이동"
           >
-            <span>🌙🌿🌷💤</span>
-            {/* <span className="relative inline-block overflow-hidden group">
-              <p className="inline-block transition-transform duration-300 group-hover:-translate-y-full">
-                
-              </p>
-              <p className="absolute left-0 inline-block translate-y-full transition-transform duration-300 group-hover:translate-y-0">
-                <span className="text-primary font-bold text-lg">
-                  While True,
-                </span>
-                <span className="text-foreground ml-1">Sleep</span>
-              </p>
-            </span> */}
+            <Image src={theme === "dark" ? "/images/dark_logo.png" : "/images/light_logo.png"} alt="logo" width={110} height={100} />
           </Link>
           <nav>
             <ul className="flex items-center gap-1">
@@ -49,8 +39,8 @@ const Header = () => {
                     href={item.href}
                     className={cn(
                       "px-3 py-2 text-sm transition-colors",
-                      pathname.startsWith(item.href)
-                        ? "text-primary-foreground bg-primary/20 dark:bg-primary/30"
+                      pathname === item.href
+                        ? "font-semibold"
                         : "hover:text-primary dark:hover:text-primary-foreground"
                     )}
                     aria-label={`${item.name} 페이지로 이동`}
