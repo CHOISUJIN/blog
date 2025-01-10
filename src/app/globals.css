@@ -56,7 +56,7 @@
     --border: hsla(0, 0%, 100%, 0.1);
     --spinner-color: rgba(255, 255, 255, 65);
 
-    --page-background: var(--gray-75);
+    --page-background: var(--gray-50);
 
     --heading: var(--gray-900);
     --text-body: var(--gray-800);
