@@ -1,6 +1,6 @@
 export default function SkillText({ text }: { text: string }) {
   return (
-    <div className="rounded-md px-2.5 py-1 text-xs text-primary-foreground transition-colors text-nowrap bg-primary hover:bg-primary/70">
+    <div className="rounded-md px-2.5 py-1 text-xs transition-colors text-nowrap bg-gray-100 hover:bg-gray-200 dark:bg-gray-300 dark:hover:bg-gray-400">
       {text}
     </div>
   );
