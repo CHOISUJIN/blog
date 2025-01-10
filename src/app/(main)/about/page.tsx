@@ -9,9 +9,9 @@ import { baseUrl, siteName, siteMetadata } from "@/lib/metadata";
 import { FixedSizeImgWithPlaceholder } from "@/components/fixed-size-img-with-placeholder";
 
 export async function generateMetadata(): Promise<Metadata> {
-  const pageTitle = "About";
+  const pageTitle = "소개";
   const description =
-    "모바일 앱 개발에 주력하는 소프트웨어 엔지니어입니다. React Native를 활용한 앱 개발에 집중하며, iOS/Android 개발 경험을 보유하고 있습니다. 책임감 있는 개발과 원활한 팀 협업을 지향합니다.";
+    "웹 개발자입니다. ASP.NET과 Vue.js를 활용한 프론트엔드 및 백엔드 개발에 집중하며, 효율적인 코드 작성과 협업을 중요시합니다.";
   const url = `${baseUrl}/about`;
 
   return {

@@ -8,7 +8,7 @@ const getSitemapForPostList = async () => {
     .map((path) => parsePostFileName(path))
     .map((slug: string) => ({
       lastModified: new Date(),
-      url: `${baseUrl}/posts/${slug}`,
+      url: `${baseUrl}/${slug}`,
     }));
   return sitemapPostList;
 };
@@ -21,7 +21,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     {
       url: baseUrl,
       lastModified: new Date(),
-      changeFrequency: "weekly",
+      changeFrequency: "daily",
       priority: 1,
     },
     {
@@ -32,12 +32,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     },
     {
       url: `${baseUrl}/tags`,
-      lastModified: new Date(),
-      changeFrequency: "weekly",
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/posts`,
       lastModified: new Date(),
       changeFrequency: "weekly",
       priority: 0.9,

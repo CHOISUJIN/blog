@@ -4,8 +4,8 @@ import PostList from "@/components/posts/post-list";
 import { baseUrl, siteMetadata, siteName } from "@/lib/metadata";
 
 export async function generateMetadata(): Promise<Metadata> {
-  const pageTitle = "Posts";
-  const url = `${baseUrl}/posts`;
+  const pageTitle = "포스트";
+  const url = `${baseUrl}`;
 
   return {
     title: `${pageTitle} | ${siteName}`,
@@ -26,7 +26,7 @@ export async function generateMetadata(): Promise<Metadata> {
 
 export default async function PostsPage() {
   return (
-    <div className="container mx-auto max-w-[900px] mt-24 mb-16 flex flex-col p-2 px-6">
+    <div className="container mx-auto max-w-[900px] mt-28 mb-16 flex flex-col p-2 px-6">
       <PostList />
     </div>
   );
