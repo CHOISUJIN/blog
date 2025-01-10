@@ -5,12 +5,13 @@ import { sync } from "glob";
 
 import { HeadingItem, Post, PostMatter, PostMatterWithContent } from "./types";
 
-const BASE_PATH = "/src/posts";
+const BASE_PATH = "src/posts";
 const POSTS_PATH = path.join(process.cwd(), BASE_PATH);
 
 export const parsePostFileName = (postPath: string): string => {
-  const fileName = postPath
-    .slice(postPath.indexOf(BASE_PATH))
+  const normalizedPostPath = postPath.split(path.sep).join(path.posix.sep); // OS별 경로 구분자를 '/'로 통일
+  const fileName = normalizedPostPath
+    .slice(normalizedPostPath.indexOf(BASE_PATH))
     .replace(`${BASE_PATH}/`, "")
     .replace(".mdx", "");
   return fileName;
