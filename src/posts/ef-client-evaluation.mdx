@@ -1,9 +1,10 @@
 ---
 title: "EFCore의 클라이언트 평가가 이루어지는 순간"
 desc: EFCore에서 클라이언트 평가(Client Evaluation)가 발생하는 조건과 그로 인한 성능 이슈를 살펴봅니다.
-date: 2025-01-10
 thumbnail: /posts/ef-client-evaluation/thumbnail.png
 tags: ["EFCore", "ClientEvaluation"]
+createdAt: 2025-01-10T13:29:01.170Z
+modifiedAt: 2025-01-14T00:17:04.766Z
 ---
 
 **클라이언트 평가(Client Evaluation)** 는 쿼리의 일부가 데이터베이스 서버에서 실행되지 않고 애플리케이션(클라이언트) 측에서 실행되는 것을 말한다. 데이터베이스에서 실행할 수 없는 작업(예: 특정 .NET 메서드 호출)을 쿼리 내에서 발견했을 때 발생함 !
