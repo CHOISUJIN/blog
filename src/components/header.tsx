@@ -5,8 +5,8 @@ import { usePathname } from "next/navigation";
 import { useTheme } from "next-themes";
 import { FiMoon, FiSun } from "react-icons/fi";
 import { cn } from "@/lib/utils";
-import Image from "next/image";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
+import TypingLogo from "@/components/common/typing-logo";
 
 const Header = () => {
   const pathname = usePathname();
@@ -27,16 +27,7 @@ const Header = () => {
             className="ml-2 flex items-center text-lg font-bold"
             aria-label="홈으로 이동"
           >
-            <Image
-              src={
-                theme === "dark"
-                  ? "/images/dark_logo.png"
-                  : "/images/light_logo.png"
-              }
-              alt="logo"
-              width={110}
-              height={100}
-            />
+            <TypingLogo />
           </Link>
           <nav>
             <ul className="flex items-center gap-1">

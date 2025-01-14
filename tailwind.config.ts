@@ -174,6 +174,19 @@ const config: Config = {
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
       },
+      keyframes: {
+        typing: {
+          from: { width: "0%" },
+          to: { width: "100%" },
+        },
+        blink: {
+          "50%": { opacity: "0" },
+        },
+      },
+      animation: {
+        typing: "typing 3s steps(15) forwards",
+        blink: "blink 0.8s step-end infinite",
+      },
     },
   },
   // eslint-disable-next-line @typescript-eslint/no-require-imports
