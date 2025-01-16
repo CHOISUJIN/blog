@@ -7,7 +7,7 @@ const getSitemapForPostList = async () => {
   const postList = await getDescSortedPostList();
   return postList.map((post) => ({
     lastModified: post.modifiedAt,
-    url: `${baseUrl}/posts/${post.slug}`,
+    url: `${baseUrl}/${post.slug}`,
     changeFrequency: "weekly" as const,
     priority: 0.9,
   }));
