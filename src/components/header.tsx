@@ -4,6 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useTheme } from "next-themes";
 import { FiMoon, FiSun } from "react-icons/fi";
+import { SiNaver } from "react-icons/si";
 import { cn } from "@/lib/utils";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import TypingLogo from "@/components/common/typing-logo";
@@ -45,7 +46,7 @@ const Header = () => {
                   </Link>
                 </li>
               ))}
-              <li className="border-l ml-2 p-2 pl-4 rounded-md">
+              <li className="border-l ml-2 p-2 pl-4 rounded-md relative group inline-block">
                 <Link
                   href="https://github.com/CHOISUJIN"
                   target="_blank"
@@ -53,10 +54,13 @@ const Header = () => {
                   aria-label="GitHub 프로필"
                   className="text-gray-700 hover:text-gray-900"
                 >
-                  <FaGithub size={20} />
+                  <FaGithub size={19} />
                 </Link>
+                <div className="absolute transform -translate-x-4 -translate-y-full mt-10 opacity-0 group-hover:opacity-100 transition-opacity duration-200 bg-gray-800 text-white dark:text-gray-700 dark:bg-gray-300 text-sm px-2 py-1 rounded whitespace-nowrap">
+                  GitHub
+                </div>
               </li>
-              <li className="rounded-md p-2">
+              <li className="rounded-md p-2 relative group inline-block">
                 <Link
                   href="https://www.linkedin.com/in/sooooooo/"
                   target="_blank"
@@ -64,8 +68,25 @@ const Header = () => {
                   aria-label="LinkedIn 프로필"
                   className="text-gray-700 hover:text-gray-900"
                 >
-                  <FaLinkedin size={20} />
+                  <FaLinkedin size={19} />
                 </Link>
+                <div className="absolute transform -translate-x-5 -translate-y-full mt-10 opacity-0 group-hover:opacity-100 transition-opacity duration-200 bg-gray-800 text-white dark:text-gray-700 dark:bg-gray-300 text-sm px-2 py-1 rounded whitespace-nowrap">
+                  LinkedIn
+                </div>
+              </li>
+              <li className="rounded-md p-2 relative group inline-block">
+                <Link
+                  href="https://blog.naver.com/g9marble"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="쑤쑤롱의 지구산책 블로그"
+                  className="text-gray-700 hover:text-gray-900"
+                >
+                  <SiNaver size={15} />
+                </Link>
+                <div className="absolute left-1/2 transform -translate-x-1/2 -translate-y-full mt-10 opacity-0 group-hover:opacity-100 transition-opacity duration-200 bg-gray-800 text-white dark:text-gray-700 dark:bg-gray-300 text-sm px-2 py-1 rounded whitespace-nowrap">
+                  쑤쑤롱의 지구산책
+                </div>
               </li>
               <li>
                 <button
