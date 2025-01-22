@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import { MdEmail } from "react-icons/md";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { SiNaver } from "react-icons/si";
 import Link from "next/link";
 
 import SkillText from "@/components/about/skill-text";
@@ -67,7 +68,7 @@ export default function AboutPage() {
         <div className="flex gap-3">
           <Link href="mailto:amor77777777778@gmail.com">
             <IconWrapper>
-              <MdEmail size={14} />
+              <MdEmail size={19} />
             </IconWrapper>
           </Link>
           <Link
@@ -76,7 +77,7 @@ export default function AboutPage() {
             rel="noopener noreferrer"
           >
             <IconWrapper>
-              <FaGithub size={14} />
+              <FaGithub size={18} />
             </IconWrapper>
           </Link>
           <Link
@@ -85,7 +86,17 @@ export default function AboutPage() {
             rel="noopener noreferrer"
           >
             <IconWrapper>
-              <FaLinkedin size={14} />
+              <FaLinkedin size={18} />
+            </IconWrapper>
+          </Link>
+          <Link
+            href="https://blog.naver.com/g9marble"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="pt-0.5"
+          >
+            <IconWrapper>
+              <SiNaver size={14} />
             </IconWrapper>
           </Link>
         </div>
