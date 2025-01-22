@@ -44,7 +44,7 @@ export default function TypingLogo() {
   // );
 
   return (
-    <div className="relative flex items-center justify-center h-16 text-2xl font-mono">
+    <div className="relative flex items-center justify-center h-16 text-lg md:text-2xl">
       {/* 띄어쓰기 반영을 위한 white-space 설정 */}
       <span className="whitespace-pre">&gt; await sleep();</span>
       {/* 커서 애니메이션 */}

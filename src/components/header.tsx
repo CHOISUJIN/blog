@@ -37,7 +37,7 @@ const Header = () => {
                   <Link
                     href={item.href}
                     className={cn(
-                      "px-3 py-2 text-sm transition-colors",
+                      "px-2 py-1 md:px-3 md:py-2 text-sm transition-colors",
                       pathname === item.href ? "font-semibold" : ""
                     )}
                     aria-label={`${item.name} 페이지로 이동`}
@@ -46,7 +46,7 @@ const Header = () => {
                   </Link>
                 </li>
               ))}
-              <li className="border-l ml-2 p-2 pl-4 rounded-md relative group inline-block">
+              <li className="border-l ml-1 p-1 pl-3 md:p-2 md:pl-5 rounded-md relative group inline-block">
                 <Link
                   href="https://github.com/CHOISUJIN"
                   target="_blank"
@@ -60,7 +60,7 @@ const Header = () => {
                   GitHub
                 </div>
               </li>
-              <li className="rounded-md p-2 relative group inline-block">
+              <li className="rounded-md p-1 md:p-2 relative group inline-block">
                 <Link
                   href="https://www.linkedin.com/in/sooooooo/"
                   target="_blank"
@@ -74,7 +74,7 @@ const Header = () => {
                   LinkedIn
                 </div>
               </li>
-              <li className="rounded-md p-2 relative group inline-block">
+              <li className="rounded-md p-1 md:p-2 relative group inline-block">
                 <Link
                   href="https://blog.naver.com/g9marble"
                   target="_blank"
@@ -91,15 +91,15 @@ const Header = () => {
               <li>
                 <button
                   onClick={handleThemeToggle}
-                  className="rounded-md p-2 transition-colors text-yellow-400"
+                  className="rounded-md p-1 pt-2 md:p-2 transition-colors text-yellow-400"
                   aria-label={
                     theme === "dark" ? "라이트 모드로 전환" : "다크 모드로 전환"
                   }
                 >
                   {theme === "dark" ? (
-                    <FiSun className="text-warning" />
+                    <FiSun className="text-warning" size={17} />
                   ) : (
-                    <FiMoon className="text-primary" />
+                    <FiMoon className="text-primary" size={19} />
                   )}
                 </button>
               </li>
